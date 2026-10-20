@@ -12,6 +12,6 @@ module.exports = function handler(req, res) {
   }
 
   return res.status(501).json({
-    error: 'Fitur konversi/unduh MP4 atau MP3 berbasis yt-dlp belum tersedia di deployment Vercel ini. Vercel tidak menyertakan yt-dlp dan FFmpeg secara default. Gunakan backend terpisah yang mendukung proses media, lalu hubungkan frontend ke backend tersebut.'
+    error: 'lagi tahap pengembangan ya, jadi mohon bersabar :)'
   });
 };
