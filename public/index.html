@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080d1d">
+<meta name="description" content="LinkDrop membantu membuka tautan file dan tautan berbagi yang dapat diakses.">
+<link rel="icon" type="image/png" href="/assets/linkdrop-logo.png"><title>LinkDrop — Unduh Video dari Berbagai Platform</title>
+<style>
+:root{color-scheme:dark;--bg:#070c1b;--panel:#0b1329;--line:#1d2d56;--text:#f6f8ff;--muted:#b0bfdc;--blue:#2478ff;--purple:#713bff;--cyan:#11d7ef}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--text);font:16px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial;background:radial-gradient(ellipse at 3% 24%,#173b9b80,transparent 31%),radial-gradient(ellipse at 100% 34%,#3216a066,transparent 34%),linear-gradient(145deg,#080d1c,#0a1230 70%,#111044);min-height:100vh}a{color:inherit;text-decoration:none}.wrap{width:min(1420px,100% - 48px);margin:auto}
+header{height:82px;background:#060b18ed;border-bottom:1px solid #1d2b50;position:sticky;top:0;z-index:10;backdrop-filter:blur(14px)}.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:27px;letter-spacing:-1px;white-space:nowrap}.brand img{width:52px;height:52px;object-fit:contain;border-radius:12px}.brand-name span{color:#387dff}.navlinks{display:flex;align-items:center;gap:24px;color:#d5def4;font-weight:600}.navlinks a{padding:10px 15px;border-radius:99px}.navlinks a:hover,.navlinks a.active{background:#101a32}.navright{display:flex;align-items:center;gap:16px}.iconbtn{border:0;background:transparent;color:#e6ecff;font-size:23px;cursor:pointer}.outline{border:1px solid #8b9cc0;border-radius:14px;padding:11px 16px;font-weight:700;background:#0a1020;color:#f6f8ff;white-space:nowrap}
+main{overflow:hidden}.hero{text-align:center;padding:55px 0 49px;position:relative}.hero-brand{display:flex;justify-content:center;align-items:center;gap:16px;margin:0 auto 16px}.hero-brand img{width:124px;height:124px;object-fit:contain;border-radius:24px}.hero-brand .wordmark{font-size:clamp(48px,7vw,82px);font-weight:800;letter-spacing:-4px;line-height:1}.wordmark span{background:linear-gradient(100deg,#178bff,#7c36ff);color:transparent;background-clip:text;-webkit-background-clip:text}h1{font-size:clamp(28px,3.3vw,45px);letter-spacing:-1.5px;line-height:1.15;margin:10px auto 14px;font-weight:800}.subtitle{font-size:clamp(16px,1.7vw,21px);color:#d1def8;margin:0 auto;max-width:800px}.downloadbox{max-width:980px;margin:35px auto 26px;border:1px solid #263e7a;border-radius:24px;padding:6px;background:#091126d9;box-shadow:0 18px 60px #02071855}.inputrow{display:flex;gap:10px;align-items:center;background:#080f22;border:1px solid #0f1c3b;border-radius:18px;padding:7px}.linkicon{font-size:27px;padding-left:13px;color:#d8e6ff}.inputrow input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:white;font-size:19px;padding:15px 5px}.inputrow input::placeholder{color:#7182a5}.btn{border:0;border-radius:16px;background:linear-gradient(110deg,#5146ff,#2479ff);color:#fff;font-weight:800;font-size:19px;padding:18px 29px;cursor:pointer;box-shadow:0 6px 20px #2e58ff44;white-space:nowrap}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}.btn.secondary{font-size:14px;padding:11px 16px;background:#182544;border:1px solid #35456a;box-shadow:none}.helper{font-size:12px;color:#9fb1d4;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 8px 2px}.message{display:none;text-align:left;margin:14px 8px 4px;padding:13px 15px;border-radius:12px;font-size:14px;overflow-wrap:anywhere}.message.show{display:block}.message.info{background:#102b46;border:1px solid #265b8a;color:#d8f2ff}.message.warn{background:#342a1b;border:1px solid #715a31;color:#ffe5ae}.message.error{background:#391d2a;border:1px solid #77354f;color:#ffc8d8}.section-label{font-size:19px;font-weight:700;margin:25px 0 18px}.platforms{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:15px;max-width:1120px;margin:auto}.platform{min-height:108px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#101a35aa;border:1px solid #1d2e59;border-radius:21px;padding:14px 7px;transition:.2s}.platform:hover{border-color:#4b65b5;background:#172349;transform:translateY(-3px)}.picon{width:39px;height:39px;display:grid;place-items:center;border-radius:12px;font-weight:900;font-size:21px;background:#111b32;color:#fff}.youtube{color:#ff4040}.tiktok{color:#fff;text-shadow:2px 1px #00e5ff,-2px -1px #ff315c}.instagram{background:linear-gradient(135deg,#ffc857,#ff426f,#8d39ed);border-radius:11px}.facebook{background:#1877f2;border-radius:50%}.xicon{background:#02040a}.vimeo{color:#4dbdff}.daily{font-size:28px}.tera{background:#eef5ff;color:#1884f8}.platform strong{font-size:14px;font-weight:600;text-align:center}.features{background:linear-gradient(100deg,#141a54b8,#111844c9);border-top:1px solid #1a2861;margin-top:0;padding:42px 0 55px}.featuregrid{display:grid;grid-template-columns:repeat(4,1fr)}.feature{display:flex;align-items:center;gap:16px;padding:5px 30px;border-right:1px solid #202a65;min-width:0}.feature:first-child{padding-left:0}.feature:last-child{border:0;padding-right:0}.featureicon{flex-shrink:0;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:#222a86;color:#f3f5ff;font-size:27px}.feature h3{font-size:16px;margin:0 0 4px}.feature p{font-size:13px;color:#b4c3e6;margin:0}.more{padding:48px 0 15px}.more h2{font-size:28px;margin:0 0 7px}.muted{color:var(--muted);margin:0 0 20px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{background:#101a35;border:1px solid var(--line);border-radius:17px;padding:20px}.step small{color:#83a9ff;font-weight:800;letter-spacing:1px}.step h3{margin:7px 0}.step p{color:var(--muted);font-size:14px;margin:0}.notice{margin:35px 0;padding:17px 20px;border:1px solid #66512c;background:#282218;border-radius:15px;color:#f5e1b5;font-size:13px}.notice strong{display:block;color:#fff1cf;margin-bottom:5px}footer{border-top:1px solid #202b4d;padding:25px 0 35px;color:#9aabce;font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:950px){.navlinks{gap:4px}.navlinks a{padding:9px}.platforms{grid-template-columns:repeat(4,1fr)}.feature{padding:5px 15px}.featureicon{width:50px;height:50px}.feature h3{font-size:14px}.feature p{font-size:12px}}
+@media(max-width:650px){.wrap{width:min(100% - 28px,1420px)}header{height:70px}.brand{font-size:22px}.brand img{width:43px;height:43px}.navlinks{display:none}.outline{font-size:12px;padding:9px 10px}.iconbtn{display:none}.hero{padding:35px 0 32px}.hero-brand{gap:9px;margin-bottom:18px}.hero-brand img{width:75px;height:75px;border-radius:16px}.hero-brand .wordmark{font-size:47px;letter-spacing:-2.5px}.hero h1{font-size:29px;letter-spacing:-.8px}.subtitle{font-size:15px}.downloadbox{margin-top:25px;padding:5px;border-radius:18px}.inputrow{gap:5px;border-radius:14px}.linkicon{font-size:21px;padding-left:6px}.inputrow input{font-size:14px;padding:13px 2px}.btn{font-size:15px;padding:14px 15px;border-radius:12px}.helper{font-size:11px}.section-label{font-size:16px;margin:22px 0 14px}.platforms{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.platform{min-height:92px;padding:9px 3px;border-radius:14px;gap:6px}.picon{width:33px;height:33px;font-size:18px}.platform strong{font-size:11px}.features{padding:25px 0 30px}.featuregrid{grid-template-columns:repeat(2,1fr);gap:20px 0}.feature{padding:0 10px;gap:10px;border:0}.feature:nth-child(odd){padding-left:0}.featureicon{width:43px;height:43px;font-size:20px}.feature h3{font-size:12px}.feature p{font-size:11px}.more{padding-top:35px}.more h2{font-size:23px}.steps{grid-template-columns:1fr}.notice{margin:25px 0}footer{font-size:11px}}
+@media(max-width:360px){.brand{font-size:19px}.brand img{width:38px;height:38px}.hero-brand img{width:60px;height:60px}.hero-brand .wordmark{font-size:39px}.platforms{grid-template-columns:repeat(2,1fr)}.inputrow{flex-wrap:wrap}.inputrow input{flex-basis:70%}.inputrow .btn{width:100%}}
+</style></head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="#beranda" aria-label="LinkDrop Beranda"><img src="/assets/linkdrop-logo.png" alt="Logo LinkDrop"><span class="brand-name">Link<span>Drop</span></span></a><nav class="navlinks" aria-label="Navigasi"><a class="active" href="#beranda">Beranda</a><a href="#fitur">Fitur</a><a href="#cara-pakai">Cara Pakai</a><a href="#tentang">Tentang</a></nav><div class="navright"><button class="iconbtn" id="themeBtn" type="button" aria-label="Ganti tema">☼</button><a class="outline" href="#unduh">⇩ &nbsp;Unduh Aplikasi</a></div></div></header>
+<main id="beranda">
+<section class="hero wrap"><div class="hero-brand"><img src="/assets/linkdrop-logo.png" alt=""><div class="wordmark">Link<span>Drop</span></div></div><h1>Unduh Video dari Berbagai Platform</h1><p class="subtitle">Tempel link, pilih kualitas, dan unduh dengan mudah dan cepat.</p>
+<div class="downloadbox" id="unduh"><form id="downloadForm"><div class="inputrow"><span class="linkicon" aria-hidden="true">♧</span><input id="urlInput" type="url" placeholder="Tempel link video di sini..." aria-label="Tautan video atau file" required><button class="btn" type="submit">⇩ &nbsp;Unduh</button></div></form><div class="helper"><span>🔒 Jangan masukkan kata sandi atau tautan pribadi.</span><span>MP4 · MP3 · ZIP · TeraBox · dan lainnya</span></div><div id="message" class="message" role="status" aria-live="polite"></div>
+<div id="formatPicker" style="display:none;margin:14px 8px;padding:16px;border:1px solid #344a7a;border-radius:16px;background:#101a35">
+<strong style="display:block;margin-bottom:10px">Pilih format unduhan</strong>
+<p style="font-size:13px;color:#aebfe0;margin:0 0 12px">Pilih format video atau audio. Unduhan memerlukan backend yt-dlp dan FFmpeg untuk MP3.</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+<button id="mp4Btn" class="btn" type="button">▶ Unduh MP4</button>
+<button id="mp3Btn" class="btn secondary" type="button">♫ Unduh MP3</button>
+</div></div><div id="teraboxFiles" style="display:none;margin:12px 8px 0"></div><div id="actions" style="display:none;gap:10px;flex-wrap:wrap;margin:12px 8px"><a id="downloadLink" class="btn" href="#" rel="noopener" style="text-decoration:none;display:inline-block">Buka / unduh file ↗</a><button id="copyBtn" class="btn secondary" type="button">Salin link</button></div></div>
+<div class="section-label">Didukung oleh platform berikut:</div><div class="platforms">
+<div class="platform"><div class="picon youtube">▶</div><strong>YouTube</strong></div><div class="platform"><div class="picon tiktok">♪</div><strong>TikTok</strong></div><div class="platform"><div class="picon instagram">◎</div><strong>Instagram</strong></div><div class="platform"><div class="picon facebook">f</div><strong>Facebook</strong></div><div class="platform"><div class="picon xicon">𝕏</div><strong>X (Twitter)</strong></div><div class="platform"><div class="picon vimeo">♥</div><strong>Vimeo</strong></div><div class="platform"><div class="picon daily">d</div><strong>Dailymotion</strong></div><div class="platform"><div class="picon tera">☁</div><strong>TeraBox</strong></div>
+</div></section>
+<section class="features" id="fitur"><div class="wrap featuregrid"><article class="feature"><div class="featureicon">ϟ</div><div><h3>Proses Cepat</h3><p>Alur ringkas dan mudah digunakan</p></div></article><article class="feature"><div class="featureicon">♢</div><div><h3>Aman & Terpercaya</h3><p>Tanpa meminta kata sandi akun</p></div></article><article class="feature"><div class="featureicon">▣</div><div><h3>Bisa di Semua Perangkat</h3><p>HP, tablet, dan komputer</p></div></article><article class="feature"><div class="featureicon">◎</div><div><h3>Mendukung Banyak Platform</h3><p>Termasuk tautan file dan cloud</p></div></article></div></section>
+<section class="wrap more" id="cara-pakai"><h2>Cara menggunakan LinkDrop</h2><p class="muted">Tiga langkah sederhana untuk memulai.</p><div class="steps"><article class="step"><small>LANGKAH 01</small><h3>Salin tautan</h3><p>Salin tautan publik dari platform atau file yang memang boleh kamu simpan.</p></article><article class="step"><small>LANGKAH 02</small><h3>Tempel link</h3><p>Masukkan tautan ke kolom di atas lalu tekan tombol Unduh.</p></article><article class="step"><small>LANGKAH 03</small><h3>Buka atau unduh</h3><p>Ikuti hasil yang tersedia. Akses file tetap bergantung pada izin layanan asal.</p></article></div><div class="notice" id="tentang"><strong>Catatan TeraBox</strong>Pengambilan file dari tautan berbagi TeraBox membutuhkan resolver backend yang dikonfigurasi dan kompatibel. Paket ini menyediakan integrasi resolver, tetapi tidak menyertakan layanan resolver berbayar atau menjamin setiap tautan dapat diunduh. Gunakan hanya file yang kamu punya izin untuk menyimpan.</div></section>
+</main><footer class="wrap" style="display:block;padding-top:24px;padding-bottom:24px">
+  <section aria-label="Tentang pengembang LinkDrop" style="max-width:560px;margin:0 auto 18px;padding:18px;border:1px solid #31466f;border-radius:18px;background:linear-gradient(145deg,rgba(20,34,59,.96),rgba(13,22,40,.98));box-shadow:0 12px 34px rgba(0,0,0,.18)">
+    <div style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#9bbcff;font-weight:800;margin-bottom:13px">Meet the developer</div>
+    <div style="display:flex;align-items:center;gap:15px;flex-wrap:wrap">
+      <img src="/assets/adan-instagram-profile-original.png" alt="Foto asli pengembang ADAN" width="92" height="92" style="display:block;width:92px;height:92px;flex:0 0 92px;object-fit:cover;object-position:center;border-radius:16px;border:2px solid #8297ff;box-shadow:0 0 0 4px rgba(130,151,255,.12)" />
+      <div style="flex:1;min-width:150px">
+        <div style="font-size:20px;font-weight:800;line-height:1.3;color:#f5f8ff">ADAN</div>
+        <div style="font-size:13px;color:#aab9d1;margin-top:3px">Creator of LinkDrop</div>
+        <a href="https://www.instagram.com/hendrmdn/" target="_blank" rel="noopener noreferrer" aria-label="Buka Instagram @hendrmdn" style="display:inline-flex;align-items:center;gap:8px;margin-top:11px;padding:9px 12px;border:1px solid rgba(165,180,252,.34);border-radius:10px;background:rgba(67,85,145,.28);color:#c6d3ff;text-decoration:none;font-size:13px;font-weight:750">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+          @hendrmdn <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;text-align:center;font-size:12px;color:#8290a8">
+    <span>© 2026 LinkDrop</span><span>Tidak berafiliasi dengan platform yang disebutkan.</span>
+  </div>
+</footer>
+<script>
+
+const form=document.getElementById('downloadForm');
+const input=document.getElementById('urlInput');
+const message=document.getElementById('message');
+const actions=document.getElementById('actions');
+const downloadLink=document.getElementById('downloadLink');
+const copyBtn=document.getElementById('copyBtn');
+const teraboxFiles=document.getElementById('teraboxFiles');
+let currentUrl='';
+function showMessage(text,type='info'){message.textContent=text;message.className='message show '+type;}
+function platformName(host){
+ host=host.toLowerCase().replace(/^www\./,'');
+ if(/(^|\.)youtube\.com$|youtu\.be$/.test(host))return 'YouTube';
+ if(/(^|\.)tiktok\.com$/.test(host))return 'TikTok';
+ if(/(^|\.)instagram\.com$/.test(host))return 'Instagram';
+ if(/(^|\.)facebook\.com$|(^|\.)fb\.watch$/.test(host))return 'Facebook';
+ if(/(^|\.)drive\.google\.com$/.test(host))return 'Google Drive';
+ if(/(^|\.)dropbox\.com$/.test(host))return 'Dropbox';
+ if(/(^|\.)(terabox\.com|teraboxapp\.com|1024tera\.com|4funbox\.com|teraboxlink\.com)$/.test(host))return 'TeraBox';
+ return '';
+}
+const formatPicker=document.getElementById('formatPicker');
+const mp4Btn=document.getElementById('mp4Btn');
+const mp3Btn=document.getElementById('mp3Btn');
+let busy=false;
+function setBusy(value){
+ busy=value;mp4Btn.disabled=value;mp3Btn.disabled=value;
+ mp4Btn.textContent=value?'Memproses…':'▶ Unduh MP4';
+ mp3Btn.textContent=value?'Memproses…':'♫ Unduh MP3';
+}
+async function downloadFormat(format){
+ if(!currentUrl||busy)return;
+ setBusy(true);showMessage('Menyiapkan '+format.toUpperCase()+'. Proses bergantung pada sumber dan koneksi server…','info');
+ try{
+  const response=await fetch('/api/download',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:currentUrl,format})});
+  if(!response.ok){let d={};try{d=await response.json()}catch{};throw new Error(d.error||'Unduhan gagal. Periksa konfigurasi server dan coba lagi.');}
+  const blob=await response.blob();
+  if(!blob.size)throw new Error('Server mengembalikan file kosong. Coba lagi.');
+  const disposition=response.headers.get('content-disposition')||'';
+  const match=disposition.match(/filename="([^"]+)"/i);
+  const filename=match?match[1]:'linkdrop-download.'+(format==='mp3'?'mp3':'mp4');
+  const objectUrl=URL.createObjectURL(blob);const a=document.createElement('a');
+  a.href=objectUrl;a.download=filename;document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(objectUrl),60000);
+  showMessage('Unduhan '+format.toUpperCase()+' berhasil disiapkan. Jika tidak muncul, periksa folder Unduhan browser.','info');
+ }catch(err){showMessage(err.message||'Terjadi kesalahan jaringan. Periksa koneksi lalu coba lagi.','error');}
+ finally{setBusy(false);}
+}
+mp4Btn.addEventListener('click',()=>downloadFormat('mp4'));
+mp3Btn.addEventListener('click',()=>downloadFormat('mp3'));
+form.addEventListener('submit',e=>{
+ e.preventDefault();actions.style.display='none';formatPicker.style.display='none';teraboxFiles.style.display='none';teraboxFiles.innerHTML='';
+ let u;
+ try{u=new URL(input.value.trim());}catch{showMessage('Masukkan URL yang valid, misalnya https://contoh.com/video','error');return;}
+ if(!['http:','https:'].includes(u.protocol)){showMessage('Untuk keamanan, hanya tautan HTTP atau HTTPS yang didukung.','error');return;}
+ if(u.username||u.password){showMessage('Tautan dengan informasi login di dalam URL tidak diterima.','error');return;}
+ currentUrl=u.href;
+ const p=platformName(u.hostname);
+ downloadLink.href=currentUrl;downloadLink.target='_blank';
+ if(p==='TeraBox'){
+   showMessage('Memeriksa tautan berbagi TeraBox melalui backend…','info');
+   fetch('/api/terabox/resolve',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:currentUrl})})
+    .then(async r=>{const d=await r.json().catch(()=>({error:'Respons server tidak valid.'}));if(!r.ok)throw new Error(d.error||'Gagal memproses tautan TeraBox.');return d;})
+    .then(d=>{
+      if(!Array.isArray(d.files)||!d.files.length)throw new Error('Tidak ada file yang bisa diunduh dari tautan ini.');
+      teraboxFiles.innerHTML='<strong style="display:block;margin-bottom:8px">File yang ditemukan</strong>';
+      d.files.forEach(f=>{const row=document.createElement('div');row.style.cssText='display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px;margin-top:8px;background:#10182b;border:1px solid #293655;border-radius:12px;flex-wrap:wrap';const name=document.createElement('span');name.textContent=f.name||'File TeraBox';name.style.cssText='overflow-wrap:anywhere;min-width:0;flex:1';const a=document.createElement('a');a.className='btn';a.href=f.url;a.target='_blank';a.rel='noopener noreferrer';a.textContent='Unduh ↗';a.style.textDecoration='none';row.append(name,a);teraboxFiles.append(row);});
+      teraboxFiles.style.display='block';showMessage('Berhasil menemukan '+d.files.length+' file. Pilih file yang ingin disimpan.','info');
+    }).catch(err=>{showMessage(err.message+' Periksa konfigurasi TERABOX_RESOLVER_URL di server.','warn');});
+ }else{
+   formatPicker.style.display='block';
+   showMessage('Tautan siap diproses. Pilih MP4 untuk video atau MP3 untuk audio. Backend yt-dlp harus terpasang di server.','info');
+ }
+});
+copyBtn.addEventListener('click',async()=>{
+ if(!currentUrl)return;
+ try{await navigator.clipboard.writeText(currentUrl);copyBtn.textContent='Tersalin ✓';setTimeout(()=>copyBtn.textContent='Salin link',1500);}
+ catch{showMessage('Clipboard tidak tersedia. Salin URL dari kolom input secara manual.','warn');}
+});
+
+// Small theme toggle; the default design remains dark like the reference.
+document.getElementById('themeBtn').addEventListener('click',()=>{const light=document.body.dataset.theme!=='light';document.body.dataset.theme=light?'light':'dark';document.body.style.background=light?'linear-gradient(145deg,#f4f7ff,#e7edff)':'';document.body.style.color=light?'#10182b':'';document.querySelectorAll('.platform,.step').forEach(el=>{el.style.background=light?'#ffffffcc':'';el.style.color=light?'#10182b':'';});document.querySelectorAll('.subtitle,.muted').forEach(el=>el.style.color=light?'#42506c':'');});
+</script></body></html>
