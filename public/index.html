@@ -50,7 +50,7 @@ main{overflow:hidden}.hero{text-align:center;padding:55px 0 49px;position:relati
   </div>
 </footer>
 <script>
-
+const API_BASE = "https://linkdropp-nine.vercel.app";
 const form=document.getElementById('downloadForm');
 const input=document.getElementById('urlInput');
 const message=document.getElementById('message');
@@ -84,7 +84,7 @@ async function downloadFormat(format){
  if(!currentUrl||busy)return;
  setBusy(true);showMessage('Menyiapkan '+format.toUpperCase()+'. Proses bergantung pada sumber dan koneksi server…','info');
  try{
-  const response=await fetch('/api/download',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:currentUrl,format})});
+  const response=await fetch(`${API_BASE}/api/download`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url:currentUrl,format})});
   if(!response.ok){let d={};try{d=await response.json()}catch{};throw new Error(d.error||'Unduhan gagal. Periksa konfigurasi server dan coba lagi.');}
   const blob=await response.blob();
   if(!blob.size)throw new Error('Server mengembalikan file kosong. Coba lagi.');
