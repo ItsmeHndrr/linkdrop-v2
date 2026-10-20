@@ -92,3 +92,10 @@ Proyek ini sudah ditambahkan konfigurasi Vercel dan API Functions di folder `api
 - Deployment tidak dapat menjamin setiap tautan media berhasil; akses, format respons resolver, dan kebijakan platform sumber tetap berpengaruh.
 
 Jangan masukkan API key ke file frontend atau commit `.env` ke GitHub.
+
+
+## Perbaikan error `invalid_function_runtime` di Vercel
+
+Konfigurasi `vercel.json` tidak lagi menetapkan `runtime: nodejs20.x` pada blok `functions`. Vercel akan mendeteksi runtime Node.js untuk file API di folder `api/` secara otomatis. Folder `public/` ditetapkan sebagai output frontend statis.
+
+Saat mengimpor proyek, pastikan **Root Directory** adalah folder `linkdrop-terabox-vercel` (folder yang berisi `vercel.json`, `package.json`, `api/`, dan `public/`). Setelah mengunggah perubahan, lakukan redeploy.
